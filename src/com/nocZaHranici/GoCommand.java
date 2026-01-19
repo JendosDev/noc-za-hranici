@@ -5,7 +5,5 @@ public class GoCommand implements Command {
     public void execute(Game game) {
 
     }
-    public Command parse(String input) {
-        return null;
-    }
+
 }
