@@ -1,0 +1,117 @@
+{
+  "locations": [
+    {
+      "id": "vesnice",
+      "name": "Vesnice na okraji lesa",
+      "description": "Výchozí lokace hry. Vesnice ležící těsně u hranice zakázaného lesa. Lidé zde působí nedůvěřivě a neochotně mluvit o tajemství za hranicemi.",
+      "items": ["stara_mapa"],
+      "npcs": ["vesnican", "stary_muz"],
+      "connections": {
+        "jih": "okraj_lesa"
+      }
+    },
+
+    {
+      "id": "okraj_lesa",
+      "name": "Okraj lesa",
+      "description": "Tiché a temné místo, kde končí běžný svět lidí. Stromy jsou husté a světlo zde rychle mizí.",
+      "items": ["zlomena_vetev", "stopy"],
+      "npcs": ["lesnik"],
+      "connections": {
+        "sever": "vesnice",
+        "jih": "stara_brana"
+      }
+    },
+
+    {
+      "id": "stara_brana",
+      "name": "Stará zarostlá brána",
+      "description": "Kamenná brána porostlá mechem a kořeny. Je zamčená a nelze ji otevřít bez speciálního klíče.",
+      "items": ["rezavy_klic"],
+      "npcs": [],
+      "connections": {
+        "sever": "okraj_lesa",
+        "jih": "les_za_hranici"
+      }
+    },
+
+    {
+      "id": "les_za_hranici",
+      "name": "Les za hranicí",
+      "description": "Les působí nepřirozeně. Stíny se pohybují a zvuky klamou směr. Čas zde plyne jinak.",
+      "items": ["temny_talisman"],
+      "npcs": ["hlas_lesa"],
+      "connections": {
+        "sever": "stara_brana",
+        "zapad": "stare_ruiny",
+        "vychod": "lesni_mesto"
+      }
+    },
+
+    {
+      "id": "lesni_mesto",
+      "name": "Lesní město",
+      "description": "Opuštěné město skryté mezi stromy. Budovy nesou stopy dávného života.",
+      "items": ["stary_svitok", "mechanismus"],
+      "npcs": ["strážce_mesta"],
+      "connections": {
+        "zapad": "stare_ruiny"
+      }
+    },
+
+    {
+      "id": "hornata_oblast",
+      "name": "Hornatá oblast",
+      "description": "Drsná a nebezpečná oblast tvořená úzkými stezkami, skalami a prudkými srázy.",
+      "items": ["lano", "horske_kladivo"],
+      "npcs": [],
+      "connections": {
+        "jih": "jeskyne_hranice"
+      }
+    },
+
+    {
+      "id": "stare_ruiny",
+      "name": "Staré ruiny",
+      "description": "Pozůstatky dávného chrámu spjatého s temnou historií lesa a hranice.",
+      "items": ["krvavy_symbol", "starodavny_klic"],
+      "npcs": ["temny_kultista"],
+      "connections": {
+        "vychod": "les_za_hranici",
+        "dolu": "mucirna"
+      }
+    },
+
+    {
+      "id": "mucirna",
+      "name": "Mučírna",
+      "description": "Podzemní prostor plný utrpení, temných vzpomínek a psychického tlaku.",
+      "items": ["ochranny_amulett", "lektvar_odvahy"],
+      "npcs": ["zlomena_duse"],
+      "connections": {
+        "nahoru": "stare_ruiny",
+        "jih": "jeskyne_hranice"
+      }
+    },
+
+    {
+      "id": "jeskyne_hranice",
+      "name": "Jeskyně hranice",
+      "description": "Závěrečná lokalita, kde se prolíná svět lidí a neznáma.",
+      "items": [],
+      "npcs": ["strážce_hranice"],
+      "connections": {
+        "jih": "konec_hry"
+      }
+    },
+
+    {
+      "id": "konec_hry",
+      "name": "Konec hry",
+      "description": "Závěrečné vyústění příběhu. Konec reflektuje rozhodnutí hráče a zvolené cesty.",
+      "items": [],
+      "npcs": [],
+      "connections": {}
+    }
+  ]
+}

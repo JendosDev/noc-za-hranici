@@ -1,0 +1,52 @@
+@startuml
+start
+
+:Zobrazit hlavní menu;
+:Vybrat novou hru nebo načíst hru;
+
+if (Nová hra?) then (ano)
+  :Zobrazit úvodní příběh;
+else (ne)
+  :Načíst uloženou hru;
+endif
+
+:Zobrazit aktuální lokaci;
+
+while (Hra nekončí?)
+  :Zobrazit dostupné příkazy hráče;
+  :Čekat na vstup hráče;
+
+  if (příkaz = jdi) then (ano)
+    :Změnit lokaci;
+    :Zobrazit popis nové lokace;
+  elseif (příkaz = seber) then (ano)
+    :Zkontrolovat dostupnost předmětu;
+    :Přidat předmět do inventáře;
+  elseif (příkaz = pouzij) then (ano)
+    :Použít předmět z inventáře;
+    :Vyhodnotit efekt předmětu;
+  elseif (příkaz = mluv) then (ano)
+    :Spustit dialog s NPC;
+    :Vyhodnotit volbu hráče;
+  endif
+
+  if (setkání s nepřítelem?) then (ano)
+    :Spustit tahový souboj;
+    if (hráč vyhrál?) then (ano)
+      :Pokračovat ve hře;
+    else (ne)
+      :Konec hry (prohra);
+      stop
+    endif
+  endif
+
+  if (splněn úkol?) then (ano)
+    :Aktualizovat stav úkolu;
+    :Odemknout nové lokace nebo odměny;
+  endif
+
+endwhile
+
+:Konec hry (výhra);
+stop
+@enduml
