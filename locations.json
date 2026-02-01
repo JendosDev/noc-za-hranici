@@ -42,9 +42,9 @@
       "items": ["temny_talisman"],
       "npcs": ["hlas_lesa"],
       "connections": {
-        "sever": "stara_brana",
-        "zapad": "stare_ruiny",
-        "vychod": "lesni_mesto"
+        "zapad": "lesni_mesto",
+        "vychod": "stare_ruiny",
+        "jih": "stara_brana"
       }
     },
 
@@ -55,7 +55,8 @@
       "items": ["stary_svitok", "mechanismus"],
       "npcs": ["strážce_mesta"],
       "connections": {
-        "zapad": "stare_ruiny"
+        "jih": "hornata_oblast",
+        "vychod": "les_za_hranici"
       }
     },
 
@@ -77,8 +78,8 @@
       "items": ["krvavy_symbol", "starodavny_klic"],
       "npcs": ["temny_kultista"],
       "connections": {
-        "vychod": "les_za_hranici",
-        "dolu": "mucirna"
+        "jih": "mucirna",
+        "zapad": "les_za_hranici"
       }
     },
 
@@ -89,7 +90,6 @@
       "items": ["ochranny_amulett", "lektvar_odvahy"],
       "npcs": ["zlomena_duse"],
       "connections": {
-        "nahoru": "stare_ruiny",
         "jih": "jeskyne_hranice"
       }
     },

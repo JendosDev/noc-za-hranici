@@ -30,12 +30,52 @@ public class Location {
         return this.connections.get(direction);
     }
 
-    public String getDescription() {
-        return null;
+    public String getId() {
+        return id;
     }
 
-    public Map<String, Location> getExits() {
-        return null;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public List<NPC> getNpcs() {
+        return npcs;
+    }
+
+    public void setNpcs(List<NPC> npcs) {
+        this.npcs = npcs;
+    }
+
+    public Map<String, Location> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(Map<String, Location> connections) {
+        this.connections = connections;
     }
 
     public void addItem(Item item) {
