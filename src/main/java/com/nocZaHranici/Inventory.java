@@ -3,8 +3,9 @@ package com.nocZaHranici;
 import java.util.Map;
 
 public class Inventory {
-    boolean addItem(Item item) {
-        return false;
+    public
+    public void addItem(Item item) {
+        return ;
     }
 
     void removeItem(Item item) {

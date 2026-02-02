@@ -1,4 +1,7 @@
-package com.nocZaHranici;
+package com.nocZaHranici.commands;
+
+import com.nocZaHranici.Location;
+import com.nocZaHranici.Player;
 
 public class GoCommand implements Command {
     private Player player;
