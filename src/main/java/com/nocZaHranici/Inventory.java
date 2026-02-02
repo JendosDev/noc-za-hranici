@@ -1,18 +1,21 @@
 package com.nocZaHranici;
 
+import java.util.List;
 import java.util.Map;
 
 public class Inventory {
-    public
+    private List<Item> items;
+    private final int MAX_VALUE = 6;
+
     public void addItem(Item item) {
-        return ;
+        items.add(item);
     }
 
-    void removeItem(Item item) {
-
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 
-    boolean contains(Item item) {
+    public boolean contains(Item item) {
         return false;
     }
 }

@@ -28,5 +28,4 @@ public class GoCommand implements Command {
             System.out.println("Tímto směrem se pohybovat nemůžeš.");
         }
     }
-
 }

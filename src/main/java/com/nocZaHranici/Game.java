@@ -3,14 +3,13 @@ package com.nocZaHranici;
 import java.util.Map;
 
 public class Game {
-
     private GameWorld gameWorld;
     private Player player;
     private Location currentLocation;
 
-    public Game(Location currentLocation) {
+    public Game() {
         this.gameWorld = new GameWorld();
-        gameWorld.loadFromJson("locations.json");
+        this.gameWorld.loadFromJson("locations.json");
         Location start = gameWorld.getLocation("vesnice");
 
         this.player = new Player(start);
