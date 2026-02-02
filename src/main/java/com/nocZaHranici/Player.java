@@ -1,6 +1,5 @@
 package com.nocZaHranici;
 
-
 public class Player {
     private Location currentLocation;
     private Inventory inventory;
