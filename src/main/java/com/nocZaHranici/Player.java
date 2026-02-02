@@ -38,21 +38,4 @@ public class Player {
     public void setQuests(List<Quest> quests) {
         this.quests = quests;
     }
-
-//    public void go(String direction) {
-//        Map<String, Location> exits = currentLocation.getConnections();
-//
-//        if (exits.containsKey(direction)) {
-//            String nextId = exits.get(direction).getId();
-//            Location next = gameWorld.getLocation(nextId);
-//
-//            if (next != null) {
-//                currentLocation = next;
-//                System.out.println(currentLocation.getName());
-//                System.out.println(currentLocation.getDescription());
-//            }
-//        } else {
-//            System.out.println("Tímto směrem se jít nedá.");
-//        }
-//    }
 }
