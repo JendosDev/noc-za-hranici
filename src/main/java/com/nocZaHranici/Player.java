@@ -1,38 +1,45 @@
 package com.nocZaHranici;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Player {
-    private GameWorld gameWorld;
+    private Location currentLocation;
+    private Inventory inventory;
 
-    public Location getCurrentLocation() {
-        return null;
+    public Player(Location startLocation) {
+        this.currentLocation = startLocation;
+        this.inventory = new Inventory();
     }
 
-    private Location currentLocation;
-    private Map<String, Location> locations = new HashMap<>();
-
-
-    public void go(String direction) {
-        Map<String, Location> exits = currentLocation.getConnections();
-
-        if (exits.containsKey(direction)) {
-            String nextId = exits.get(direction).getId();
-            Location next = gameWorld.getLocation(nextId);
-
-            if (next != null) {
-                currentLocation = next;
-                System.out.println(currentLocation.getName());
-                System.out.println(currentLocation.getDescription());
-            }
-        } else {
-            System.out.println("Tímto směrem se jít nedá.");
-        }
+    public Location getCurrentLocation() {
+        return currentLocation;
     }
 
     public Inventory getInventory() {
-        return null;
+        return inventory;
     }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    //    public void go(String direction) {
+//        Map<String, Location> exits = currentLocation.getConnections();
+//
+//        if (exits.containsKey(direction)) {
+//            String nextId = exits.get(direction).getId();
+//            Location next = gameWorld.getLocation(nextId);
+//
+//            if (next != null) {
+//                currentLocation = next;
+//                System.out.println(currentLocation.getName());
+//                System.out.println(currentLocation.getDescription());
+//            }
+//        } else {
+//            System.out.println("Tímto směrem se jít nedá.");
+//        }
+//    }
 }

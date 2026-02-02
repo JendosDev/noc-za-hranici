@@ -14,7 +14,6 @@ import java.util.Map;
 
 public class GameWorld {
     private Map<String, Location> locations;
-    private Location startLocation;
 
     public GameWorld() {
         this.locations = new HashMap<>();
@@ -35,8 +34,8 @@ public class GameWorld {
     }
 
 
-    public Location getStartLocation() {
-        return startLocation;
+    public void addLocation(Location location) {
+        locations.put(location.getId(), location);
     }
 
     public Location getLocation(String id) {

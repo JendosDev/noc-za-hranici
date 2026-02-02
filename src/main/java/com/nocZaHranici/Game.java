@@ -1,15 +1,19 @@
 package com.nocZaHranici;
 
+import java.util.Map;
+
 public class Game {
 
     private GameWorld gameWorld;
     private Player player;
     private Location currentLocation;
 
-    public Game(GameWorld gameWorld, Location currentLocation) {
-        this.gameWorld = gameWorld;
-        this.player = new Player();
-        this.currentLocation = currentLocation;
+    public Game(Location currentLocation) {
+        this.gameWorld = new GameWorld();
+        gameWorld.loadFromJson("locations.json");
+        Location start = gameWorld.getLocation("vesnice");
+
+        this.player = new Player(start);
     }
 
     public void start() {
@@ -17,6 +21,21 @@ public class Game {
         currentLocation = gameWorld.getLocation("vesnice");
 
         printCurrentLocation();
+    }
+
+    public void go(String target) {
+        Location currentLocation = player.getCurrentLocation();
+        Map<String, Location> exits = currentLocation.getConnections();
+
+        if (exits.containsKey(target)) {
+            Location next = exits.get(target);
+            player.setCurrentLocation(next);
+
+            System.out.println("Jsi nyní v: " + next.getName());
+            System.out.println(next.getDescription());
+        } else {
+            System.out.println("Tímto směrem se pohybovat nemůžeš.");
+        }
     }
 
 
